@@ -106,3 +106,31 @@ created ./dist/bundle.js in 134ms
 ブラウザで表示すると、npmのライブラリが実行できたことを確認できます
 
 ![alt text](image-1.png)
+
+
+### バンドル後のファイル
+./dist/bundle.js
+
+```js
+function getAugmentedNamespace(n) {
+  if (n.__esModule) return n;
+  var f = n.default;
+	if (typeof f == "function") {
+		var a = function a () {
+			if (this instanceof a) {
+        return Reflect.construct(f, arguments, this.constructor);
+			}
+			return f.apply(this, arguments);
+		};
+		a.prototype = f.prototype;
+  } else a = {};
+
+// ～～1000行ほど省略～～
+
+var require$$0 = /*@__PURE__*/getAugmentedNamespace(cowsay_es);
+
+const cowsay = require$$0;
+console.log(cowsay.say({text : "ウシだよ！"}));
+
+export { cowsay$1 as default };
+```
