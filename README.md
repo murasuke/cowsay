@@ -45,14 +45,23 @@ $ node cowsay.js
 </html>
 ```
 
-(Webブラウザには)require()がないので、実行エラーになる
+* (Webブラウザには)require()がないので、実行エラーになる
+
+* そもそもあったとしても`node_module`の中にあるので読み込めない(パスが違う)
 
 ![img01](image.png)
 
 ## nodeライブラリを利用するためバンドルを行う
+
+ビルド対象に指定したファイルから、芋づる式に依存ファイルを見つけて1つにまとめる処理を`バンドル`といいます
+
 ### バンドラー(rollup.js)をインストール
 
-rollup本体＋node用のプラグイン
+rollup本体＋node用のプラグイン をインストールする
+
+バンドラーは[webpack](https://webpack.js.org/)が有名ですが、設定ファイルが非常に複雑なため書きやすい[rollup.js](https://rollupjs.org/)を利用します
+
+* nodeモジュールの依存解決と、commonjsを読み込み可能にするプラグインが必要
 
 ```
 $ npm i -D rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve
@@ -60,7 +69,7 @@ $ npm i -D rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve
 
 ### バンドル用の設定ファイルを作成する
 
-* nodeモジュールの依存解決と、commonjsを読み込み可能にするプラグインが必要
+* コメントを参照のこと
 
 rollup.config.mjs
 ```js
@@ -93,7 +102,7 @@ created ./dist/bundle.js in 134ms
 
 ### htmlを修正して再度jsを実行してみる
 
-```
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -106,7 +115,7 @@ created ./dist/bundle.js in 134ms
 </html>
 ```
 
-ブラウザで表示すると、npmのライブラリが実行できたことを確認できます
+ブラウザで表示すると、npmのライブラリ(を呼びだすjs)が実行できたことを確認できます
 
 ![alt text](image-1.png)
 
@@ -140,3 +149,7 @@ console.log(cowsay.say({text : "ウシだよ！"}));
 
 export { cowsay$1 as default };
 ```
+
+
+## おまけ：htmlの&lt;script&gt;タグで`cowsay`を呼び出してみる
+

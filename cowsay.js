@@ -1,2 +1,2 @@
-const cowsay = require("cowsay");
-console.log(cowsay.say({text : "ウシだよ！"}));
+const cowsay = require('cowsay');
+console.log(cowsay.say({ text: 'ウシだよ！' }));
