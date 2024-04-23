@@ -51,6 +51,9 @@ $ node cowsay.js
 
 ## nodeライブラリを利用するためバンドルを行う
 ### バンドラー(rollup.js)をインストール
+
+rollup本体＋node用のプラグイン
+
 ```
 $ npm i -D rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve
 ```
@@ -109,6 +112,8 @@ created ./dist/bundle.js in 134ms
 
 
 ### バンドル後のファイル
+
+ライブラリのjsとcowsay.jsがマージされています
 
 ./dist/bundle.js
 
