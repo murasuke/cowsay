@@ -45,17 +45,17 @@ $ node cowsay.js
 </html>
 ```
 
-require()がないエラーになる
+(Webブラウザには)require()がないので、実行エラーになる
 
 ![img01](image.png)
 
-
-## バンドラー(rollup.js)をインストール
+## nodeライブラリを利用するためバンドルを行う
+### バンドラー(rollup.js)をインストール
 ```
 $ npm i -D rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve
 ```
 
-## バンドル用の設定ファイルを作成する
+### バンドル用の設定ファイルを作成する
 
 * nodeモジュールの依存解決と、commonjsを読み込み可能にするプラグインが必要
 
@@ -77,7 +77,10 @@ export default {
 };
 ```
 
-## jsファイルをバンドル
+### jsファイルをバンドル
+
+cowsay.js を元に、必要なjsを1つにまとめてbundle.jsを出力する
+
 ```
 $ npx rollup -c
 
@@ -85,7 +88,7 @@ $ npx rollup -c
 created ./dist/bundle.js in 134ms
 ```
 
-## htmlを修正して再度jsを実行してみる
+### htmlを修正して再度jsを実行してみる
 
 ```
 <!doctype html>
