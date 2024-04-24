@@ -5,7 +5,9 @@
   <title>cowsay</title>
 </head>
 <body>
-  <script type="module" src="./dist/bundle.js"></script>
+  <script type="module">
+    import cowsay from './dist/bundle.js';
+    console.log(cowsay.say({ text: 'I am a cow!' }));
+  </script>
 </body>
 </html>
-
