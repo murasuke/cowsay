@@ -137,7 +137,18 @@ created ./dist/bundle.js in 134ms
 </html>
 ```
 
-ブラウザで表示すると、npmのライブラリ(を呼びだすjs)が実行できたことを確認できます
+
+
+簡易サーバーを起動して、ブラウザで表示すると、npmのライブラリ(を呼びだすjs)が実行できたことを確認できます
+```
+$ npx http-server
+
+Available on:
+  http://192.168.3.7:8080
+  http://127.0.0.1:8080
+  http://172.31.0.1:8080
+Hit CTRL-C to stop the serve
+```
 
 ![alt text](image-1.png)
 
@@ -209,6 +220,6 @@ cowsayを`import`して呼び出します(バンドル後はESModuleになるた
 </html>
 ```
 
-呼び出しできました
+ブラウザで開くと、呼び出しができたことを確認できます
 
 ![alt text](image-2.png)
