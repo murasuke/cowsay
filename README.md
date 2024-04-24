@@ -35,9 +35,9 @@ $ mkdir cowsay; cd cowsay;
 $ npm init -y
 $ npm install cowsay
 $ cat <<EOF > cowsay.js
-> const cowsay = require("cowsay");
-> console.log(cowsay.say({text : "ウシだよ！"}));
-> EOF
+const cowsay = require("cowsay");
+console.log(cowsay.say({text : "ウシだよ！"}));
+EOF
 $ node cowsay.js
  ____________
 < ウシだよ！ >
