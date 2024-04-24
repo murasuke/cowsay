@@ -1,5 +1,26 @@
 # 勉強会：npmライブラリをWebアプリから使う方法
 
+## はじめに
+
+JavaScriptは歴史的な経緯で複数のモジュール形式を持っています
+* IIFE(Immediately-invoked function expression)
+* CommonJS
+* AMD(Asynchronous Module Definition)
+* UMD(Universal Module Definition)
+* ES Modules
+
+現在はCommonJSからESModuleへの過渡期です。
+npmでライブラリをインストールすると、どちらか一方だったり、両方含まれていたりいろいろな状況ですが
+基本的にはバンドラーがうまいことやってくれるので、気にしなくても大丈夫(なことが多いです)
+
+もう少し詳しく知りたいとか歴史が好きな人は、下記の参考リンクをご確認ください
+* [Node.jsとはなにか？なぜみんな使っているのか？](https://qiita.com/non_cal/items/a8fee0b7ad96e67713eb)
+* [JavaScriptの歴史をまとめてみる](https://frog-song.hatenablog.com/entry/2020/12/04/005522)
+* [JavaScriptのモジュールについてまとめてく: 歴史編](https://zenn.dev/ebi_yu/scraps/db4c7d1f3e883a)
+* [JavaScriptモジュールシステムのこれまでとこれから](https://qiita.com/riku_takeuchi/items/4fd0bca8a99ac14aed45)
+* [Node.js + TypeScriptのモジュールを整理してみる](https://blog.koh.dev/2024-04-23-nodejs-typescript-module/)
+
+
 ## npm (Node Package Manager)とは
 
 この辺参照
